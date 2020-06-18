@@ -200,13 +200,14 @@ public class Automat {
 
     if(this.anzahlVonWare.get(wareInFach.getName()) != null) {
        this.anzahlVonWare.replace(wareInFach.getName(), this.anzahlVonWare.get(wareInFach.getName()) - 1);
-       this.checkBestellung(wareInFach.getName(), this.anzahlVonWare.get(wareInFach.getName()));
     }
 
     this.mDrehteller[pDrehtellerNr - 1].deleteWareInFach(this.automatPosition);
 
     SystemSoftware.zeigeWarenPreisAn(pDrehtellerNr, 0.00);
     SystemSoftware.zeigeVerfallsDatum(pDrehtellerNr,0);
+
+    this.checkWarenNachBestellung();
 
     return true;
     
