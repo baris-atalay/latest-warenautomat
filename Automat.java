@@ -130,12 +130,10 @@ public class Automat {
         } else {
           SystemSoftware.zeigeVerfallsDatum(i + 1,1);
         }
-
-        if(this.anzahlVonWare.get(wareInFach.getName()) != null) {
-          this.checkBestellung(wareInFach.getName(), this.anzahlVonWare.get(wareInFach.getName()));
-        }
       }
     }
+
+    this.checkWarenNachBestellung();
   }
 
   /**
